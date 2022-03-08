@@ -47,13 +47,24 @@ botonConsultNom.addEventListener('click', ()=>{
     let inputDat = document.getElementById('inputDat').value;
     //Variable donde hace el fltro con los datos que llega del input
     let results= arraydat.filter(arrayda => arrayda.Nombre == inputDat);
-    salida.innerText =' El nombre consultado es: ' +JSON.stringify(results);
+    if(results.length === 0){
+        salida.innerText ='No hay nungún nombre con ese dato';
+    }else{
+        salida.innerText =' El nombre consultado es: ' +JSON.stringify(results);
+    }
+    
 });
 
 //Accion de clic en el boton de consultar Apellido. 
 botonConsultApelli.addEventListener('click', ()=>{
     let inputDat = document.getElementById('inputDat').value;
     let results= arraydat.filter(arrayda => arrayda.Apellido == inputDat);
-    salida.innerText =' El Apellido consultado es: ' +JSON.stringify(results);
+    if(results.length === 0){
+        salida.innerText ='No hay nungún apellido con ese dato';
+    }else{
+        salida.innerText =' El Apellido consultado es: ' +JSON.stringify(results);
+    }
 });
+
+
 
