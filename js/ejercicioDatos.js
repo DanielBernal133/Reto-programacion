@@ -46,11 +46,11 @@ botonConsultNom.addEventListener('click', ()=>{
     //Variable de donde saca el dato a cconsultar
     let inputDat = document.getElementById('inputDat').value;
     //Variable donde hace el fltro con los datos que llega del input
-    let results= arraydat.filter(arrayda => arrayda.Nombre == inputDat);
-    if(results.length === 0){
+    let result= arraydat.filter(arrayda => arrayda.Nombre.toUpperCase() === inputDat.toUpperCase());
+    if(result.length === 0){
         salida.innerText ='No hay nungún nombre con ese dato';
     }else{
-        salida.innerText =' El nombre consultado es: ' +JSON.stringify(results);
+        salida.innerText =' El nombre consultado es: ' +JSON.stringify(result);
     }
     
 });
@@ -58,7 +58,7 @@ botonConsultNom.addEventListener('click', ()=>{
 //Accion de clic en el boton de consultar Apellido. 
 botonConsultApelli.addEventListener('click', ()=>{
     let inputDat = document.getElementById('inputDat').value;
-    let results= arraydat.filter(arrayda => arrayda.Apellido == inputDat);
+    let results= arraydat.filter(arrayda => arrayda.Apellido.toUpperCase() === inputDat.toUpperCase());
     if(results.length === 0){
         salida.innerText ='No hay nungún apellido con ese dato';
     }else{
